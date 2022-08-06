@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    background-image: url('../src/assets/mobile/bg-pattern-header.svg');
+}
+header nav{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+}
+header .nav1{
+    background-color: red;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.toggle-switch {
+    position: relative;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+}
+.toggle-switch label{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #28292c;
+}
+input{
+    position: absolute;
+    display: none;
+}
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: .3s;
+}
+
+.slider{
+    background-color: #dbd8e0;
+}
+.slider::before{
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #1545d4;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    transition: .3s;
+}
+input:checked ~ .slider::before{
+    background-color: #1545d4;
+    left: 58px;
 }
