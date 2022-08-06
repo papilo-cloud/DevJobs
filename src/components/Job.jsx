@@ -1,18 +1,19 @@
 import React from 'react'
 
-const Job = () => {
+const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract}) => {
+  console.log(company);
   return (
     <div className='job'>
-        <div className="img">
-            <h1>IMG</h1>
+        <div className="img" style={{backgroundColor:logoBackground }}>
+            <img src={logo} alt="logo" />
         </div>
         <div className="text">
-            <p>5h ago <span>.</span> Full Time</p>
-            <h4>Senior Software Engineer</h4>
-            <p>Scoot</p>
+            <p>{postedAt} <span>.</span> {contract} </p>
+            <h4>{position}</h4>
+            <p>{company}</p>
         </div>
         <div className="rerion">
-            <p>United Kingdom</p>
+            <p>{location}</p>
         </div>
     </div>
   )

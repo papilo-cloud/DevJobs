@@ -93,13 +93,26 @@ input:checked ~ .slider::before{
 }
 .job .img{
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: rebeccapurple;
     padding: 10px;
     border-radius: 20px;
-    top: -20%;
+    top: -13%;
 }
 .job .text{
     margin-bottom: 20px;
+}
+@media screen and (min-width: 686px) {
+    .jobs{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .jobs{
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1rem;
+    }
 }

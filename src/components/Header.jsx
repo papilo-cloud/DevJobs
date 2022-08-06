@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
         <div className='div1'> 
-            <a href="">devjobs</a>
+            <a href="#">devjobs</a>
         </div>
            <ToggleButton />
     </header>
