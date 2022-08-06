@@ -9,7 +9,7 @@ const Jobs = () => {
     console.log(data);
   return (
     <div className='jobs'>
-        <Job />
+        {data.map((job, x) =>  <Job key={x} {...job} />)}
     </div>
   )
 }

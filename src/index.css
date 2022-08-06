@@ -2,6 +2,14 @@ body, *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-color: hsl(51, 17%, 92%); */
+}
+.App{
+    position: relative;
+    min-height: 100vh;
+    background-color: hsl(51, 17%, 92%);
+    width: 100%;
+
 }
 header{
     position: relative;
@@ -66,4 +74,32 @@ input{
 input:checked ~ .slider::before{
     background-color: #1545d4;
     left: 58px;
+}
+.jobs{
+    position: relative;
+    display: grid;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 2rem;
+}
+.job{
+    position: relative;
+    background-color: #fff;
+    padding: 60px 20px 20px;
+    display: inline-block;
+    line-height: 30px;
+    border-radius: 8px;
+    margin-bottom: 4rem;
+}
+.job .img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: rebeccapurple;
+    padding: 10px;
+    border-radius: 20px;
+    top: -20%;
+}
+.job .text{
+    margin-bottom: 20px;
 }

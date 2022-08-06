@@ -4,7 +4,7 @@ const Job = () => {
   return (
     <div className='job'>
         <div className="img">
-            
+            <h1>IMG</h1>
         </div>
         <div className="text">
             <p>5h ago <span>.</span> Full Time</p>
