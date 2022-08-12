@@ -5,11 +5,12 @@ import Job from './Job'
 
 
 const Jobs = () => {
-    const {data} = useContext(GlobalContext)
-    console.log(data);
-  return (
+    const {data, visible} = useContext(GlobalContext)
+    // console.log(visible)
+
+    return (
     <div className='jobs'>
-        {data.map((job, x) =>  <Job key={x} {...job} />)}
+        {data.map((job, x) =>  <Job key={x} {...job} visible={visible} />)}
     </div>
   )
 }

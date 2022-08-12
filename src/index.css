@@ -3,6 +3,7 @@ body, *{
     padding: 0;
     box-sizing: border-box;
     /* background-color: hsl(51, 17%, 92%); */
+    font-family: sans-serif;
 }
 .App{
     position: relative;
@@ -172,6 +173,13 @@ header nav{
     line-height: 30px;
     border-radius: 8px;
     margin-bottom: 4rem;
+    transform: translate3d(0,100px,0);
+    transition:all .3s ease-out;
+    opacity: 0;
+}
+.job.active{
+    transform: translate3d(0,0,0);
+    opacity: 1;
 }
 .job .img{
     position: absolute;
@@ -181,6 +189,14 @@ header nav{
     padding: 10px;
     border-radius: 20px;
     top: -13%;
+}
+.job .img img{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 .job .text{
     margin-bottom: 20px;
