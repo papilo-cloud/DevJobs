@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import { GlobalContext } from './context/UserContext';
 
 const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract}) => {
   const item = useRef(null)
+  const {theme} = useContext(GlobalContext)
   
   useEffect(() => {
    
@@ -11,12 +13,11 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
     function onScroll() {
      scrolling()
     }
+    const elem = item.current
+
     document.addEventListener('DOMContentLoaded',scrolling())
      
-    
-
     function scrolling(){
-      const elem = item.current
       if (visible(elem)) {
         elem.classList.add('active')
       }else{
@@ -32,7 +33,7 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
   }, [])
   
   return (
-    <div className='job' ref={item}>
+    <div className={theme ? 'job dark_theme':'job'} ref={item}>
         <div className="img" style={{backgroundColor:logoBackground }}>
             <img src={logo} alt="logo" />
         </div>
@@ -41,7 +42,7 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
             <h4>{position}</h4>
             <p>{company}</p>
         </div>
-        <div className="rerion">
+        <div className="region">
             <p>{location}</p>
         </div>
     </div>

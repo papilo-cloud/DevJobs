@@ -17,7 +17,7 @@ const Jobs = () => {
           {data.slice(0,more).map((job, x) =>  <Job key={x} {...job} />)}
       </div>
       <button className='btn' style={{display: show? 'block':'none'}} 
-      onClick={() =>{setMore(prev => prev + 5); setShow(!show)}}>More</button>
+      onClick={() =>{setMore(prev => prev + 5); setShow(!show)}}>Load More</button>
     </>
   )
 }

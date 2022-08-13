@@ -5,21 +5,13 @@ export const GlobalContext = React.createContext()
 
 export const GlobalProvider = ({children}) => {
     const [data, setData] = useState(datas)
-
-    // window.addEventListener('scroll', () =>{
-    //     scrolling()
-    // })
-    // document.addEventListener('DOMContentLoaded',scrolling)
-
-    // function scrolling(){
-
-    // }
-    // Helper function
+    const [theme, setTheme] = useState(false)
     
-
     return(
         <GlobalContext.Provider value={{
-            data
+            data,
+            theme,
+            setTheme
         }}>
             {children}
         </GlobalContext.Provider>
