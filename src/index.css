@@ -283,6 +283,9 @@ head{
     }
 }
 @media screen and (max-width:768px) {
+    .filter label{
+        border-right: 0;
+    }
     .filter .label1, .filter .label2{
         display: none;
         overflow: hidden;
