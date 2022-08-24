@@ -2,9 +2,11 @@ body, *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: hsl(51, 17%, 92%); */
     font-family: sans-serif;
     font-size: 16px;
+}
+button:hover{
+    cursor: pointer;
 }
 .App{
     position: relative;
@@ -72,7 +74,8 @@ header .div img{
     overflow: hidden;
     border-right: 1px solid #121721;
 }
-.filter label:last-child{
+
+.filter .lbl .label2 label{
     border-right: 0;
 }
 .filter input[type="text"]{
@@ -82,6 +85,9 @@ header .div img{
     border: none;
     outline: none;
     background-color: transparent;
+}
+.filter .lbl .label1 input{
+    border-bottom: 1px solid #19212e;
 }
 .filter .label{
     display: flex;
@@ -103,16 +109,23 @@ header .div img{
     justify-content: center;
     background-image: url('../src/assets/desktop/icon-search.svg');
 }
-
-.filter .label2 {
+.filter .lbl{
+    position: relative;
+    display: flex;
+}
+.filter .lbl .label1{
+    display: flex;
+    align-items: center;
+}
+.filter .lbl .label2 {
     display: flex;
     position: relative;
     justify-content: space-around;
     align-items: center;
     padding-right: 12px;
 }
-.filter .label2 input[type="submit"]{
-    margin-left: 12px;
+.filter .lbl .label2 input[type="submit"]{
+    /* margin-left: 12px; */
     padding: 8px 10px;
     border: none;
     outline: none;
@@ -120,10 +133,11 @@ header .div img{
     background-color: #5964E0;
     border-radius: 5px;
 }
-.filter .label2 .checkbox{
+.filter .lbl .label2 .checkbox{
     width: 20px;
     height: 20px;
     background-color: #dbd8e0;
+    margin-right: 20px;
 }
 
 .toggle-switch {
@@ -256,10 +270,19 @@ head{
         grid-template-columns: repeat(2,1fr);
         column-gap: 1rem;
     }
-    .filter input {
+    .filter .lbl .label1 input{
+        border-bottom: 0;
+    }
+    .filter .lbl{
+        flex: 2;
+    }
+    .filter .label{
         flex: 1;
     }
-     .filter label{
+    .filter .lbl .label1{
+        flex: 1;
+    }
+    .filter .lbl .label2{
         flex: 1.2;
     }
 }
@@ -279,16 +302,49 @@ head{
         padding: 2rem 7rem;
     }
     .filter label{
-        flex: 1;
+        padding: 2rem 20px;
+
     }
+   
 }
 @media screen and (max-width:768px) {
     .filter label{
         border-right: 0;
     }
-    .filter .label1, .filter .label2{
-        display: none;
+    .filter .lbl {
+        position: absolute;
+        display: block;
+        top:100px;
+        left: 50%;
+        /* background-color: rebeccapurple; */
+        background-color: inherit;
+        padding: 8px 2px;
+        z-index: 10000000;
+        width: 100%;
+        transform: translateX(-50%);
         overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 10px 10px 32px rgba(0, 0, 0, .4);
+        opacity: 0;
+    }
+    .filter .show {
+        opacity: 1;
+    }
+    .filter .lbl .label2{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 8px;
+        text-align: left;
+    }
+    .filter .lbl .label2 input{
+        width: 100%;
+        padding: 22px 12px;
+    }
+    .filter .lbl .label1 input{
+        padding: 20px;
+      
     }
     .filter .label .search button{
         position: relative;
@@ -302,6 +358,7 @@ head{
         padding: 10px;
         background-color: transparent;
     }
+  
 }
 @media screen and (min-width: 768px) {
     .filter .label .search button{
