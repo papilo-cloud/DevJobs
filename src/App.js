@@ -12,14 +12,12 @@ function App() {
   return (
     <div className={theme? 'App dark_themes':'App'}>      
         <Header />
-        {/* <Filter /> */}
-        <JobDetails />
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Jobs />} />
           <Route path="/:id" element={<JobDetails />} />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 } 

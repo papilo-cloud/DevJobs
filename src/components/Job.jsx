@@ -36,19 +36,23 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
   }, [])
    
   return (
-    <div className={theme ? 'job dark_theme':'job'} ref={item}>
-        <div className="img" style={{backgroundColor:logoBackground }}>
-            <img src={logo} alt="logo" />
-        </div>
-        <div className="text">
-            <p>{postedAt} <span></span> {contract} </p>
-            <h4>{position}</h4>
-            <p>{company}</p>
-        </div>
-        <div className="region">
-            <p>{location}</p>
-        </div>
-    </div>
+    
+      <div className={theme ? 'job dark_theme':'job'} ref={item}>
+        <Link to={`/${id}`}>
+          <div className="img" style={{backgroundColor:logoBackground }}>
+              <img src={logo} alt="logo" />
+          </div>
+          <div className="text">
+              <p>{postedAt} <span></span> {contract} </p>
+              <h4>{position}</h4>
+              <p>{company}</p>
+          </div>
+          <div className="region">
+              <p>{location}</p>
+          </div>
+        </Link>
+      </div>
+  
   )
 }
 

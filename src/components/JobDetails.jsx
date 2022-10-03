@@ -3,23 +3,32 @@ import { useContext } from "react"
 // import { GlobalContext } from "./context/UserContext"
 import { GlobalContext } from './context/UserContext'
 import datas from '../data.json'
+import { useParams } from "react-router-dom"
 
 
 const JobDetails = () => {
     const {theme} = useContext(GlobalContext)
-    let x = datas[1]
-    console.log(x);
+
+     function getId(number) {
+        return datas.find(
+          num => num.id === number
+        );
+      }
+
+    let params = useParams()
+    let nums = getId(parseInt(params.id, 10))
+    console.log(nums.id);
 
   return (
     <div className={theme ? 'job_details darkss_theme':'job_details'}>
         <div className="top">
             <div className="details">
-                <div className="img" style={{ backgroundColor: x.logoBackground}}>
-                    <img src={x.logo} alt="Hello" />
+                <div className="img" style={{ backgroundColor: nums.logoBackground}}>
+                    <img src={nums.logo} alt="Hello" />
                 </div>
                 <div className="txt">
-                    <h2>{x.company}</h2>
-                    <span>{x.company}.com</span>
+                    <h2>{nums.company}</h2>
+                    <span>{nums.company}.com</span>
                 </div>
             </div>
             <div className="btnn">
@@ -30,9 +39,9 @@ const JobDetails = () => {
         <div className="msg">
             <div className="msg_txt">
                 <div className="txt">
-                    <p>{x.postedAt}<span></span>{x.contract}</p>
-                    <h3>{x.position}</h3>
-                    <p className="region">{x.location}</p>
+                    <p>{nums.postedAt}<span></span>{nums.contract}</p>
+                    <h3>{nums.position}</h3>
+                    <p className="region">{nums.location}</p>
                 </div>
                 <div className="butn">
                     <button>Apply Now</button>
@@ -45,14 +54,14 @@ const JobDetails = () => {
                     Incidunt ea eos qui assumenda?
                 </p>
                 <h4>Requirements</h4>
-                <p>{x.requirements.content}</p>
+                <p>{nums.requirements.content}</p>
                 <ul>
-                    {x.requirements.items.map(item => <li key={item}>{item}</li> )}
+                    {nums.requirements.items.map(item => <li key={item}>{item}</li> )}
                 </ul>
                 <h4>What You Will Do</h4>
-                <p>{x.role.content}</p>
+                <p>{nums.role.content}</p>
                 <ul>
-                    {x.role.items.map(item => <li key={item}>{item}</li> )}
+                    {nums.role.items.map(item => <li key={item}>{item}</li> )}
                 </ul>
             </div>
         </div>
@@ -72,8 +81,8 @@ const JobDetails = () => {
 
         <div className="footer">
             <div className="aside">
-                <h3>{x.position}</h3>
-                <span>{x.company}</span>
+                <h3>{nums.position}</h3>
+                <span>{nums.company}</span>
             </div>
             <div className="button">
                 <button>Apply Now</button>

@@ -12,16 +12,16 @@ export const GlobalProvider = ({children}) => {
 
     const keys = ['position','company']
 
-    const Filter = () =>{
+    const Filters = () =>{
         return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query))  && item.location.toLowerCase().includes(location) && item.contract.includes(contract))
     }
-
+  
     return(
         <GlobalContext.Provider value={{
             data,
             theme,
             setTheme,
-            Filter,
+            Filters,
             query,
             setQuery, 
             setLocation,
