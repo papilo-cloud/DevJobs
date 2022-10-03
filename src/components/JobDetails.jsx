@@ -11,7 +11,6 @@ const JobDetails = () => {
     console.log(x);
 
   return (
-    <div className="bdy">
     <div className={theme ? 'job_details darkss_theme':'job_details'}>
         <div className="top">
             <div className="details">
@@ -80,7 +79,6 @@ const JobDetails = () => {
                 <button>Apply Now</button>
             </div>
         </div>
-    </div>
     </div>
   )
 }
