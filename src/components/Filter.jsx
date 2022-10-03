@@ -10,25 +10,25 @@ import { useState } from 'react';
 const Filter = () => { 
 
     const [show, setShow] = useState(false)
+    const [chck, setChck] = useState(false)
     const [filters, setFilters] = useState('')
+    const [locate, setLocate] = useState('')
 
     const x = window.innerWidth >= 1000 ? 'Full Time Only':'Full Time';
     const y = window.innerWidth >= 1000 ? 'Filter by title, companies, expertise...':'Filter by title...';
-    const {theme, setQuery, setLocation, setSearch, srch} = useContext(GlobalContext)
+    const {theme, setQuery, setLocation, setContract} = useContext(GlobalContext)
 
-    const onFilter = () =>{
 
-      setSearch(true)
-      setTimeout(() =>{
-        setSearch(false)
-        alert(srch)
-      }, 1500)
-    }
 
-    console.log(filters);
     function addFilter() {
-      // console.log('hello')
+
       setQuery(filters)
+      setLocation(locate)
+      if (chck) {
+        setContract('Full Time')
+      } else{
+        setContract('')
+      }
     }
    
   return (
@@ -52,15 +52,16 @@ const Filter = () => {
                   <label className='label1'>
                     <img src={location} alt="location"/>
                       <input type="text"  className='text2'
-                       onChange={e => setLocation(e.target.value) }
+                      value={locate}
+                       onChange={e => setLocate(e.target.value) }
                        placeholder='Filter by location...'/>
                   </label>
                   <div className='label2'>
                       <label>
-                        <input type="checkbox" className='checkbox' />
+                        <input type="checkbox" className='checkbox' onClick={() => setChck(!chck)} />
                         <span>{x}</span>
                       </label>
-                      <input type="submit" value="Search" onClick={onFilter} />
+                      <input type="submit" value="Search" onClick={addFilter} />
                   </div>
                 </div>
             </form>

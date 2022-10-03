@@ -17,6 +17,7 @@ button:hover{
 .dark_themes{
     background-color: #121721;
     color: #fff;
+    
 }
 
 header{
@@ -110,6 +111,7 @@ header .div img{
     justify-content: center;
     background-image: url('../src/assets/desktop/icon-search.svg');
 }
+
 .filter .lbl{
     position: relative;
     display: flex;
@@ -126,13 +128,13 @@ header .div img{
     padding-right: 12px;
 }
 .filter .lbl .label2 input[type="submit"]{
-    /* margin-left: 12px; */
     padding: 8px 10px;
     border: none;
     outline: none;
     color: #fff;
     background-color: #5964E0;
     border-radius: 5px;
+    cursor: pointer;
 }
 .filter .lbl .label2 .checkbox{
     width: 20px;
@@ -195,6 +197,7 @@ header .div img{
     width: 100%;
     padding: 2rem;
     color: #19212e;
+    z-index: 100000;
 }
 
  .btn{
@@ -223,7 +226,7 @@ header .div img{
     margin-bottom: 4rem;
     transform: translate3d(0,100px,0);
     transition:all .3s ease-out;
-    opacity: 0;
+    opacity: 1;
 }
 .dark_theme{
     background-color: #1d222a;
@@ -244,10 +247,11 @@ head{
     color: #7383a0;
     color: #5964E0;
 }
-.job.active{
+.active{
     transform: translate3d(0,0,0);
     opacity: 1;
 }
+
 .job .img{
     position: absolute;
     width: 60px;
@@ -267,6 +271,18 @@ head{
 }
 .job .text{
     margin-bottom: 20px;
+}
+.job .text p span{
+    position: relative;
+    background-color: #7383a0;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    font-size: 42px;
+    font-weight: bold;
+    bottom: 2px;
+    border-radius: 50%;
+    margin: 0 10px;
 }
 .job .region p{
     color: #5964E0;

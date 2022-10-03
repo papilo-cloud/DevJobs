@@ -10,7 +10,8 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
   useEffect(() => {
    
     window.addEventListener('scroll', onScroll)
-    function onScroll() {
+    function onScroll(e) {
+      e.preventDefault()
      scrolling()
     }
     const elem = item.current 
@@ -38,7 +39,7 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
             <img src={logo} alt="logo" />
         </div>
         <div className="text">
-            <p>{postedAt} <span>.</span> {contract} </p>
+            <p>{postedAt} <span></span> {contract} </p>
             <h4>{position}</h4>
             <p>{company}</p>
         </div>

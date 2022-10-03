@@ -6,7 +6,7 @@ import Job from './Job'
 
 
 const Jobs = () => {
-    const [more, setMore] = useState(10)
+    const [more, setMore] = useState(12)
     const [show, setShow] = useState(true)
     const {Filter,data} = useContext(GlobalContext)
    console.log(data.length);

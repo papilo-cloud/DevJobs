@@ -6,21 +6,17 @@ export const GlobalContext = React.createContext()
 export const GlobalProvider = ({children}) => {
     const [data, setData] = useState(datas)
     const [theme, setTheme] = useState(false)
-    const [srch, setSearch] = useState(false)
+    const [contract, setContract] = useState('')
     const [query, setQuery] = useState('')
     const [location, setLocation] = useState('')
     console.log(data.filter(x => x.contract == 'Full Time'))
 
-    console.log(srch)
 
 
     const keys = ['position','company']
 
     const Filter = () =>{
-        if(srch){
-            return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query))  && item.location.toLowerCase().includes(location) && item.contract == 'Full Time')
-        }
-        return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query))  && item.location.toLowerCase().includes(location) )
+        return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query))  && item.location.toLowerCase().includes(location) && item.contract.includes(contract))
     }
 
     return(
@@ -32,8 +28,8 @@ export const GlobalProvider = ({children}) => {
             query,
             setQuery, 
             setLocation,
-            setSearch,
-            srch
+            setContract,
+            contract
         }}>
             {children}
         </GlobalContext.Provider>
