@@ -13,7 +13,7 @@ export const GlobalProvider = ({children}) => {
     const keys = ['position','company']
 
     const Filters = () =>{
-        return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query))  && item.location.toLowerCase().includes(location) && item.contract.includes(contract))
+        return data.filter(item => keys.some(key => item[key].toLowerCase().includes(query.toLowerCase()))  && item.location.toLowerCase().includes(location.toLowerCase()) && item.contract.includes(contract))
     }
   
     return(
