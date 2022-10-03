@@ -5,7 +5,7 @@ import img2 from '../assets/desktop/icon-moon.svg'
 
 const Header = () => {
   return (
-    <header>
+    <header> 
         <div className='div1'> 
             <a href="#">devjobs</a>
         </div>

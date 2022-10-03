@@ -13,7 +13,7 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
     function onScroll() {
      scrolling()
     }
-    const elem = item.current
+    const elem = item.current 
 
     document.addEventListener('DOMContentLoaded',scrolling())
      
@@ -31,7 +31,7 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
       return (height + window.innerHeight >= bottom)
   }
   }, [])
-  
+   
   return (
     <div className={theme ? 'job dark_theme':'job'} ref={item}>
         <div className="img" style={{backgroundColor:logoBackground }}>
