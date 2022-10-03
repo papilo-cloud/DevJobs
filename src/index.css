@@ -20,7 +20,6 @@ button:hover{
 .dark_themes{
     background-color: #121721;
     color: #fff;
-    
 }
 
 header{
@@ -294,7 +293,8 @@ head{
 .job_details{
     position: relative;
     margin: -1rem 0 ;
-    padding: 0 2rem ;
+    padding: 0 2rem 6rem;
+    color: #7383a0;
 }
 .job_details .top{
     position: relative;
@@ -330,6 +330,7 @@ head{
 .details .txt{
     margin-bottom: 1rem;
 }
+
 .details .txt h2{
     margin-bottom: 1rem;
     font-size: 22px;
@@ -350,6 +351,7 @@ head{
     padding: 2rem;
     box-shadow: 2em 2em 5em rgba(0, 0, 0, .1);
     border-radius: 8px;
+    margin-bottom: 2rem;
 }
 .msg .msg_txt {
     position: relative;
@@ -400,7 +402,67 @@ head{
     line-height: 25px;
     letter-spacing: .4px;
 }
+.apply{
+    position: relative;background-color: #5964E0;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2em 2em 5em rgba(0, 0, 0, .1);
+}
+.apply p{
+    line-height: 25px;
+    letter-spacing: .4px;
+    color: #fff;
+    font-weight: 500;
+}
+.apply h4{
+    margin: 1.2rem 0;
+    color: #fff;
+    letter-spacing: 0.8px;
+}
+.job_details .footer{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.job_details .footer .aside h3{
+    color: #121721;
+}
+.job_details .footer button{
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    background-color: #5964E0;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+.darkss_theme .top, .darkss_theme .msg, .darkss_theme .footer{
+    background-color: #19212e;
+    color: #7383a0;
+}
+.darkss_theme .top h2, .darkss_theme .txt h3, .darkss_theme .msg h4{
+    color: #fff;
+}
 
+.job_details .footer .aside{
+    text-align: left;
+}
+.darkss_theme .footer .aside h3{
+    color: #fff;
+}
+.job_details .footer .button{
+    width: 100%;
+}
 @media screen and (min-width: 768px) {
     .jobs{
         grid-template-columns: repeat(2,1fr);
@@ -420,6 +482,24 @@ head{
     }
     .filter .lbl .label2{
         flex: 1.2;
+    }
+    .job_details{
+        padding: 0 5em 6rem;
+        margin: -1rem auto; 
+    }
+    .job_details .footer .button{
+        width: 150px;
+    }
+    .job_details .footer{
+        padding: 1rem 5em;
+    }
+    .msg .msg_txt {
+        flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+    }
+    .msg .msg_txt .butn{
+        width: 150px;
     }
 }
 
@@ -441,8 +521,17 @@ head{
         padding: 2rem 20px;
 
     }
+    .job_details{
+        padding: 0 15em 6rem;
+        margin: -1rem auto; 
+    }
+    .job_details .footer{
+        padding: 1rem 15em;
+    }
+   
    
 }
+
 @media screen and (max-width:768px) {
     .filter label{
         border-right: 0;
@@ -493,6 +582,9 @@ head{
     .filter .label .search .btn1{
         padding: 10px;
         background-color: transparent;
+    }
+    .job_details .footer .aside{
+        display: none;
     }
   
 }

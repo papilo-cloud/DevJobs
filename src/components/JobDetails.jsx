@@ -6,13 +6,13 @@ import datas from '../data.json'
 
 
 const JobDetails = () => {
-    // const data = useContext(GlobalContext)
-    let x = datas[14]
+    const {theme} = useContext(GlobalContext)
+    let x = datas[1]
     console.log(x);
 
   return (
-    
-    <div className="job_details">
+    <div className="bdy">
+    <div className={theme ? 'job_details darkss_theme':'job_details'}>
         <div className="top">
             <div className="details">
                 <div className="img" style={{ backgroundColor: x.logoBackground}}>
@@ -58,9 +58,29 @@ const JobDetails = () => {
             </div>
         </div>
 
-        <div className="footer">
-
+        <div className="apply">
+            <h4>How To Apply</h4>
+            <p> Diam volutpat commodo sed egestas egestas fringilla 
+                phasellus faucibus. Ante in nibh mauris cursus mattis.
+                Ac turpis egestas sed tempus. Nunc faucibus a pellentesque sit. 
+                Vitae turpis massa sed elementum tempus egestas sed sed risus. 
+                Velit aliquet sagittis id consectetur purus ut faucibus pulvinar.
+                Mattis nunc sed blandit libero volutpat sed. Faucibus turpis in eu mi.
+                Ultrices gravida dictum fusce ut placerat orci nulla. Massa sapien
+                faucibus et molestie ac feugiat. Malesuada proin libero nunc consequat 
+                interdum varius sit. Malesuada fames ac turpis egestas sed tempus.</p>
         </div>
+
+        <div className="footer">
+            <div className="aside">
+                <h3>{x.position}</h3>
+                <span>{x.company}</span>
+            </div>
+            <div className="button">
+                <button>Apply Now</button>
+            </div>
+        </div>
+    </div>
     </div>
   )
 }
