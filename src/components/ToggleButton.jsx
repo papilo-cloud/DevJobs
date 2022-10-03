@@ -4,7 +4,6 @@ import { GlobalContext } from './context/UserContext'
 const ToggleButton = () => {
 
   const {setTheme,theme} = useContext(GlobalContext)
-  console.log(theme)
   const handleClick= () =>{
     setTheme(!theme)
   }

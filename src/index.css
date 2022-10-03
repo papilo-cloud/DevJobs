@@ -5,6 +5,9 @@ body, *{
     font-family: sans-serif;
     font-size: 16px;
 }
+.overflow{
+    overflow: hidden;
+}
 button:hover{
     cursor: pointer; 
 }
@@ -197,7 +200,6 @@ header .div img{
     width: 100%;
     padding: 2rem;
     color: #19212e;
-    z-index: 100000;
 }
 
  .btn{
@@ -238,7 +240,7 @@ header .div img{
 .darks_theme .label .text1, .darks_theme .label1 .text2{
     color: #fff;
 }
-.job h4{
+.job h4, .msg h3{
     columns:#000 ;
 }
 head{
@@ -272,7 +274,7 @@ head{
 .job .text{
     margin-bottom: 20px;
 }
-.job .text p span{
+.job .text p span.msg,.msg_txt .txt p span{
     position: relative;
     background-color: #7383a0;
     display: inline-block;
@@ -284,9 +286,121 @@ head{
     border-radius: 50%;
     margin: 0 10px;
 }
-.job .region p{
+.job .region p,.msg .msg_txt .txt .region{
     color: #5964E0;
 }
+
+/* Detailed Page */
+.job_details{
+    position: relative;
+    margin: -1rem 0 ;
+    padding: 0 2rem ;
+}
+.job_details .top{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding:0 2rem 2rem;
+    background: #fff;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 2em 2em 5em rgba(0, 0, 0, .1);
+    margin-bottom: 2rem;
+}
+.details .img{
+    position: relative;
+    background-color: #121721;
+    top: -25px;
+    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    left: 50%;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+.details .img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.details .txt{
+    margin-bottom: 1rem;
+}
+.details .txt h2{
+    margin-bottom: 1rem;
+    font-size: 22px;
+} 
+.top .btnn button{
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #1545d4;
+    background: #dbd8e0;
+}
+.msg{
+    position: relative;
+    color: #19212e;
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 2em 2em 5em rgba(0, 0, 0, .1);
+    border-radius: 8px;
+}
+.msg .msg_txt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.msg .msg_txt .txt{
+    margin-bottom: 2rem;
+    letter-spacing: .4px;
+}
+.msg .msg_txt .txt h3{
+    margin: 1rem 0;
+    font-size: 22px;
+}
+.msg .butn{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+.msg .butn button{
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    border: none;
+    background-color: #5964E0;
+    color: #fff;
+    border-radius: 8px;
+}
+.msg .msg_cont p {
+    line-height: 25px;
+    letter-spacing: .4px;
+}
+.msg .msg_cont h4{
+    margin: 1.5rem 0;
+}
+.msg ul {
+    position: relative;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+.msg ul:nth-child(odd){
+    list-style-type: number;
+}
+.msg ul li {
+    padding-left: 1rem;
+    line-height: 25px;
+    letter-spacing: .4px;
+}
+
 @media screen and (min-width: 768px) {
     .jobs{
         grid-template-columns: repeat(2,1fr);

@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import { useEffect } from 'react';
+import { Link, Outlet } from 'react-router-dom'
 import { useRef } from 'react';
 import { GlobalContext } from './context/UserContext';
+
 
 const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract}) => {
   const item = useRef(null)

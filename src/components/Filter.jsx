@@ -24,11 +24,17 @@ const Filter = () => {
 
       setQuery(filters)
       setLocation(locate)
+      // setShow(!show)
       if (chck) {
         setContract('Full Time')
       } else{
         setContract('')
       }
+    }
+
+    function showMenu() {
+      setShow(!show)
+      document.body.classList.toggle('overflow')
     }
    
   return (
@@ -39,7 +45,7 @@ const Filter = () => {
                 <img src={searchs} alt="search"/>
                 <input type="text" className='text1' placeholder={y} value={filters} onChange={e => setFilters(e.target.value) }/>
                     <div className='search'>
-                        <button className='btn1' type='button' onClick={() => setShow(!show)}>
+                        <button className='btn1' type='button' onClick={showMenu}>
                           <img src={first} alt="search" />
                         </button>
                         <button className='btn2' type='button'>

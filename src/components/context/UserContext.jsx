@@ -9,9 +9,6 @@ export const GlobalProvider = ({children}) => {
     const [contract, setContract] = useState('')
     const [query, setQuery] = useState('')
     const [location, setLocation] = useState('')
-    console.log(data.filter(x => x.contract == 'Full Time'))
-
-
 
     const keys = ['position','company']
 
