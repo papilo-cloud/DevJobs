@@ -6,6 +6,7 @@ import location from '../assets/desktop/icon-location.svg';
 import first from '../assets/mobile/icon-filter.svg';
 import { GlobalContext } from './context/UserContext';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Filter = () => { 
 
@@ -31,16 +32,24 @@ const Filter = () => {
         setContract('')
       }
     }
-
+ 
     function showMenu() {
       setShow(!show)
       document.body.classList.toggle('overflow')
+      document.body.classList.toggle('over')
+
     }
+    
+    // useEffect(() => {
+    //   document.documentElement.addEventListener('click', () =>{
+    //     setShow(false)
+    //   })
+    // }, [])
+    
    
   return (
     <div className='filter'>
             <form className={theme? 'form darks_theme':'form'} onSubmit={e =>{ e.preventDefault()}}>
-              {/* <div> */}
                 <label className='label'>
                 <img src={searchs} alt="search"/>
                 <input type="text" className='text1' placeholder={y} value={filters} onChange={e => setFilters(e.target.value) }/>

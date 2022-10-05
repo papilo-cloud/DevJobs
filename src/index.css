@@ -2,7 +2,7 @@ body, *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family:'ABeeZee', sans-serif;
     font-size: 16px;
 }
 body a{
@@ -11,6 +11,11 @@ body a{
 }
 .overflow{
     overflow: hidden;
+    opacity: 1;
+}
+.show
+.over .jobs{
+    opacity: .1;
 }
 button:hover{
     cursor: pointer; 
@@ -600,9 +605,11 @@ head{
         border-radius: 8px;
         box-shadow: 10px 10px 32px rgba(0, 0, 0, .4);
         opacity: 0;
+        z-index: -1;
     }
     .filter .show {
         opacity: 1;
+        z-index: 1;
     }
     .filter .lbl .label2{
         display: flex;
