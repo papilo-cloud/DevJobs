@@ -8,6 +8,7 @@ import { GlobalContext } from './context/UserContext';
 const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract}) => {
   const item = useRef(null)
   const {theme} = useContext(GlobalContext)
+
   
   useEffect(() => {
    
@@ -32,6 +33,9 @@ const Job = ({id,company,logo,logoBackground,position,postedAt,location,contract
       const bottom = elem.bottom
       const height = elem.height
       return (height + window.innerHeight >= bottom)
+  }
+  return () => {
+    document.removeEventListener('DOMContentLoaded', scrolling())
   }
   }, [])
    

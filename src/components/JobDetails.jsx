@@ -1,9 +1,9 @@
 
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 // import { GlobalContext } from "./context/UserContext"
 import { GlobalContext } from './context/UserContext'
 import datas from '../data.json'
-import { useParams } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 
 
 const JobDetails = () => {
@@ -15,9 +15,15 @@ const JobDetails = () => {
         );
       }
 
-    let params = useParams()
+    let params = useParams();
+    const location = useLocation();
     let nums = getId(parseInt(params.id, 10))
-    console.log(nums.id);
+    
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    
+    }, [location])
+    
 
   return (
     <div className={theme ? 'job_details darkss_theme':'job_details'}>
